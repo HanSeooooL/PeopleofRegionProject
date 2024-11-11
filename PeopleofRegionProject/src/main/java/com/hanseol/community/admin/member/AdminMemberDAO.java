@@ -49,7 +49,7 @@ public class AdminMemberDAO {
 		args.add(adminMemberVO.getA_m_id());
 		
 		sql += "a_m_pw, ";
-		args.add(adminMemberVO.getA_m_pw());
+		args.add(passwordEncoder.encode(adminMemberVO.getA_m_pw()));
 		
 		sql += "a_m_name, ";
 		args.add(adminMemberVO.getA_m_name());

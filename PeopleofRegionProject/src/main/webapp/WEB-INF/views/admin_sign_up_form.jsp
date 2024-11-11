@@ -7,7 +7,8 @@
 <meta charset="UTF-8">
 <title>관리자 회원가입</title>
 
-<link href="${pageContext.request.contextPath}/resources/css/admin/admin_sign_up_form.css" rel="stylesheet" type="text/css">
+	<link href="${pageContext.request.contextPath}/resources/css/admin/admin_sign_up_form.css" rel="stylesheet" type="text/css">
+	<jsp:include page="include/admin_sign_up_form_js.jsp" />
 </head>
 <body>
 	<section>
@@ -22,10 +23,10 @@
 					
 					<input type="text" name="a_m_id" placeholder="아이디를 입력해주세요" class="input"> <br/>
 					<input type="password" name="a_m_pw" placeholder="비밀번호를 입력해주세요" class="input"> <br/>
-					<input type="password" name="a_m_pw" placeholder="비밀번호 확인" class="input"> <br/>
+					<input type="password" name="a_m_pw_again" placeholder="비밀번호 확인" class="input"> <br/>
 					<input type="text" name="a_m_name" placeholder="이름을 입력해주세요" class="input"> <br/>
 					
-					<input type="submit" value="SIGN UP">
+					<input type="button" value="SIGN UP" onclick="adminSignUpForm();">
 					<input type="reset" value="CANCEL">
 					
 				</form>
