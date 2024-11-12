@@ -24,7 +24,7 @@
 					
 					<input type="text" name="a_m_id" placeholder="아이디를 입력해주세요" class="input"> <br/>
 					<input type="password" name="a_m_pw" placeholder="비밀번호를 입력해주세요" class="input"> <br/>
-					<input type="password" name="a_m_pw" placeholder="비밀번호 확인" class="input"> <br/>
+					<input type="password" name="a_m_pw_again" placeholder="비밀번호 확인" class="input"> <br/>
 					<input type="text" name="a_m_name" placeholder="이름을 입력해주세요" class="input"> <br/>
 					
 					<input type="submit" value="SIGN UP">
