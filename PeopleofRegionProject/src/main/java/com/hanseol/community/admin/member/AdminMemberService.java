@@ -3,7 +3,7 @@ package com.hanseol.community.admin.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/*
+/**
  * 관리자 회원 서비스 객체
  * 201911695 한설
  */

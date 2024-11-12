@@ -1,6 +1,6 @@
 package com.hanseol.community.admin.member;
 
-/*
+/**
  * 관리자 회원 정보 객체
  */
 public class AdminMemberVO {

@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-/*
+/**
  * 관리자 회원 데이터베이스 어댑터 오브젝트
  * 201911695 한설
  * */
