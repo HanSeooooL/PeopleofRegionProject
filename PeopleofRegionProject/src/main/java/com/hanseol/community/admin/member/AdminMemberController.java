@@ -2,9 +2,13 @@ package com.hanseol.community.admin.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 /**
  * 관리자 회원 컨트롤러
@@ -36,6 +40,15 @@ public class AdminMemberController {
 		
 		if (result <= 0) nextPage = "admin_sign_up_ng";
 		
+		return nextPage;
+	}
+
+	@GetMapping("/listupadmin")
+	public String listUpAdmin(Model model) {
+		System.out.println("[AdminMembercontroller] listUpAdmin()");
+		String nextPage = "admin_list";
+		List<AdminMemberVO> adminlist = adminMemberService.listUpAdmin();
+
 		return nextPage;
 	}
 	

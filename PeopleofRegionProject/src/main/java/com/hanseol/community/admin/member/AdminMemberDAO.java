@@ -1,10 +1,13 @@
 package com.hanseol.community.admin.member;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -71,5 +74,30 @@ public class AdminMemberDAO {
 		}
 		return result;
 		
+	}
+
+	public List<AdminMemberVO> selectAdmins() {
+		System.out.println("[AdminMemberDAO] selectAdmins()");
+		String sql = "select * from admin_user";
+		List<AdminMemberVO> result = new ArrayList<>();
+		try {
+			result = jdbcTemplate.query(sql, new RowMapper<AdminMemberVO>() {
+				@Override
+				public AdminMemberVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+					AdminMemberVO adminMemberVO = new AdminMemberVO();
+					adminMemberVO.setA_m_id(rs.getString("a_m_id"));
+					adminMemberVO.setA_m_pw(rs.getString("a_m_pw"));
+					adminMemberVO.setA_m_name(rs.getString("a_m_name"));
+					adminMemberVO.setA_m_reg_date(rs.getString("a_m_reg_date"));
+					adminMemberVO.setA_m_mod_date(rs.getString("a_m_mod_date"));
+
+					return adminMemberVO;
+				}
+			});
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
 	}
 }
